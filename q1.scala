@@ -15,7 +15,15 @@ object InterestCalculator {
   }
 
   def main(args: Array[String]): Unit = {
-    val deposit = 500000.0
-    println(s"The interest on Rs. $deposit is Rs. ${calculateInterest(deposit)}")
+    // Get user input for the deposit amount
+    println("Enter the deposit amount (Rs.):")
+    val depositInput = scala.io.StdIn.readLine()
+
+    // Convert the input to a Double
+    val deposit = depositInput.toDouble
+
+    // Calculate and print the interest
+    val interest = calculateInterest(deposit)
+    println(s"The interest on Rs. $deposit is Rs. $interest")
   }
 }
